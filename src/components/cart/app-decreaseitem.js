@@ -6,7 +6,7 @@ var DecreaseItem = React.createClass({
     AppActions.decreaseItem(this.props.index)
   },
   render:function(){
-    return <button onClick={this.handler}>-</button>
+    return <button className="btn btn-warning" onClick={this.handler}>-</button>
   }
 });
 

@@ -4,20 +4,20 @@ var AddToCart = require('./app-addtocart');
 
 var CatalogItem = React.createClass({
   render:function(){
-     var itemStyle = {
-        borderBottom:'1px solid #ccc',
-        paddingBottom:15
-      };
       return (
-          <div className="col-sm-3" style={itemStyle}>
-            <h4>{this.props.item.title}</h4>
+          <div className="col-sm-3 mb-4">
+            <div className="card">
             <img src={this.props.item.img} alt="" />
+            <div className="card-body p-2 pb-3">
+            <h4 className="text-dark">{this.props.item.title}</h4>
             <p>{this.props.item.summary}</p>
-            <p>${this.props.item.cost} <span className="text-success">{this.props.item.inCart && '(' + this.props.item.qty + ' in cart)'}</span></p>
-            <div className="btn-group btn-group-xs">
-            <Link href={'/src/item/' + this.props.item.id} className="btn btn-default">Learn More</Link>
+            <p>Price <span className="text-danger h5">${this.props.item.cost}</span> <span className="text-success">{this.props.item.inCart && '(' + this.props.item.qty + ' in cart)'}</span></p>
+            <div className="">
+            <Link href={'/src/item/' + this.props.item.id} className="btn btn-secondary mr-2">Learn More</Link>
             <AddToCart item={this.props.item} />
             </div>
+            </div>
+          </div>
           </div>
 
         )

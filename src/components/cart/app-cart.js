@@ -23,8 +23,10 @@ var Cart = React.createClass({
             <td>{item.title}</td>
             <td>{item.qty}</td>
             <td>
+              <div className="btn-group">
               <Increase index={i} />
               <Decrease index={i} />
+              </div>
             </td>
             <td>${subtotal}</td>
           </tr>
@@ -33,7 +35,7 @@ var Cart = React.createClass({
     return (
       <div>
       <table className="table table-hover">
-          <thead>
+          <thead className="thead-dark">
               <tr>
                 <th></th>
                 <th>Item</th>
@@ -52,7 +54,7 @@ var Cart = React.createClass({
               </tr>
             </tfoot>
           </table>
-          <Link href="/src/">Continue Shopping</Link>
+          <Link href="/src/" className="btn btn-primary">Continue Shopping</Link>
         </div>
     )
   }

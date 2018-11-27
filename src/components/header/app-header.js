@@ -4,13 +4,14 @@ var CartSummary = require('./app-cartsummary.js');
 var Header = React.createClass({
   render:function(){
     return (
-        <div className="row">
-          <div className="col-sm-6"><h1>Lets Shop</h1></div>
-          <div className="col-sm-2 col-sm-push-3">
-            <br />
-            <CartSummary />
+        <nav className="navbar navbar-dark bg-dark mb-5">
+          <div className="container">
+          <a className="navbar-brand" href="#">
+            Lets Shop
+          </a>
+          <CartSummary />
           </div>
-       </div>
+        </nav>
     );
   }
 });

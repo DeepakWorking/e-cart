@@ -22471,7 +22471,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'button',
-	      { className: 'btn btn-default', onClick: this.handler },
+	      { className: 'btn btn-primary', onClick: this.handler },
 	      'Add To Cart'
 	    );
 	  }
@@ -22559,45 +22559,54 @@
 	  displayName: 'CatalogItem',
 	
 	  render: function render() {
-	    var itemStyle = {
-	      borderBottom: '1px solid #ccc',
-	      paddingBottom: 15
-	    };
 	    return React.createElement(
 	      'div',
-	      { className: 'col-sm-3', style: itemStyle },
-	      React.createElement(
-	        'h4',
-	        null,
-	        this.props.item.title
-	      ),
-	      React.createElement('img', { src: this.props.item.img, alt: '' }),
-	      React.createElement(
-	        'p',
-	        null,
-	        this.props.item.summary
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        '$',
-	        this.props.item.cost,
-	        ' ',
-	        React.createElement(
-	          'span',
-	          { className: 'text-success' },
-	          this.props.item.inCart && '(' + this.props.item.qty + ' in cart)'
-	        )
-	      ),
+	      { className: 'col-sm-3 mb-4' },
 	      React.createElement(
 	        'div',
-	        { className: 'btn-group btn-group-xs' },
+	        { className: 'card' },
+	        React.createElement('img', { src: this.props.item.img, alt: '' }),
 	        React.createElement(
-	          Link,
-	          { href: '/src/item/' + this.props.item.id, className: 'btn btn-default' },
-	          'Learn More'
-	        ),
-	        React.createElement(AddToCart, { item: this.props.item })
+	          'div',
+	          { className: 'card-body p-2 pb-3' },
+	          React.createElement(
+	            'h4',
+	            { className: 'text-dark' },
+	            this.props.item.title
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            this.props.item.summary
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            'Price ',
+	            React.createElement(
+	              'span',
+	              { className: 'text-danger h5' },
+	              '$',
+	              this.props.item.cost
+	            ),
+	            ' ',
+	            React.createElement(
+	              'span',
+	              { className: 'text-success' },
+	              this.props.item.inCart && '(' + this.props.item.qty + ' in cart)'
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: '' },
+	            React.createElement(
+	              Link,
+	              { href: '/src/item/' + this.props.item.id, className: 'btn btn-secondary mr-2' },
+	              'Learn More'
+	            ),
+	            React.createElement(AddToCart, { item: this.props.item })
+	          )
+	        )
 	      )
 	    );
 	  }
@@ -25124,8 +25133,12 @@
 	        React.createElement(
 	          'td',
 	          null,
-	          React.createElement(Increase, { index: i }),
-	          React.createElement(Decrease, { index: i })
+	          React.createElement(
+	            'div',
+	            { className: 'btn-group' },
+	            React.createElement(Increase, { index: i }),
+	            React.createElement(Decrease, { index: i })
+	          )
 	        ),
 	        React.createElement(
 	          'td',
@@ -25143,7 +25156,7 @@
 	        { className: 'table table-hover' },
 	        React.createElement(
 	          'thead',
-	          null,
+	          { className: 'thead-dark' },
 	          React.createElement(
 	            'tr',
 	            null,
@@ -25193,7 +25206,7 @@
 	      ),
 	      React.createElement(
 	        Link,
-	        { href: '/src/' },
+	        { href: '/src/', className: 'btn btn-primary' },
 	        'Continue Shopping'
 	      )
 	    );
@@ -25220,7 +25233,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'button',
-	      { onClick: this.handler },
+	      { className: 'btn btn-danger', onClick: this.handler },
 	      'x'
 	    );
 	  }
@@ -25246,7 +25259,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'button',
-	      { onClick: this.handler },
+	      { className: 'btn btn-warning', onClick: this.handler },
 	      '-'
 	    );
 	  }
@@ -25272,7 +25285,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      'button',
-	      { onClick: this.handler },
+	      { className: 'btn btn-primary', onClick: this.handler },
 	      '+'
 	    );
 	  }
@@ -25364,9 +25377,13 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'container' },
+	      null,
 	      React.createElement(Header, null),
-	      this.props.children
+	      React.createElement(
+	        'div',
+	        { className: 'container' },
+	        this.props.children
+	      )
 	    );
 	  }
 	});
@@ -25387,21 +25404,16 @@
 	
 	  render: function render() {
 	    return React.createElement(
-	      'div',
-	      { className: 'row' },
+	      'nav',
+	      { className: 'navbar navbar-dark bg-dark mb-5' },
 	      React.createElement(
 	        'div',
-	        { className: 'col-sm-6' },
+	        { className: 'container' },
 	        React.createElement(
-	          'h1',
-	          null,
+	          'a',
+	          { className: 'navbar-brand', href: '#' },
 	          'Lets Shop'
-	        )
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'col-sm-2 col-sm-push-3' },
-	        React.createElement('br', null),
+	        ),
 	        React.createElement(CartSummary, null)
 	      )
 	    );
@@ -25435,7 +25447,7 @@
 	      null,
 	      React.createElement(
 	        Link,
-	        { href: '/src/cart', className: 'btn btn-success' },
+	        { href: '/src/cart', className: 'btn btn-warning' },
 	        'Cart Items: ',
 	        this.state.qty,
 	        ' / $',

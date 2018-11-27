@@ -6,7 +6,7 @@ var IncreaseItem = React.createClass({
     AppActions.increaseItem(this.props.index)
   },
   render:function(){
-    return <button onClick={this.handler}>+</button>
+    return <button className="btn btn-primary" onClick={this.handler}>+</button>
   }
 });
 

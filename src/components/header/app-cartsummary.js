@@ -12,7 +12,7 @@ var CartSummary = React.createClass({
   render:function(){
     return (
       <div>
-        <Link href="/src/cart" className="btn btn-success">
+        <Link href="/src/cart" className="btn btn-warning">
           Cart Items: {this.state.qty} / ${this.state.total}
         </Link>
       </div>
